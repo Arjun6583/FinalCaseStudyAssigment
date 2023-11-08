@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radix Sort Explanation </title>
+    <link rel="stylesheet" href="radix_info.css" type="text/css">
+</head>
+<body>
+    <div class="main">
+        <h1 style="text-align: center; color: #080808;"><b>What is Radix Sort?</b></h1>
+        <div id="info-container">
+                    <p style="color: rgb(4, 4, 4);">
+                      <b style="size: 20px;">Radix Sort </b>is a linear sorting algorithm that <b>sorts elements by processing them digit by digit.</b> It is an efficient sorting algorithm for integers or strings with fixed-size keys.<br><br> 
+
+                      Rather than comparing elements directly, <b>Radix Sort distributes the elements into buckets based on each digit’s value.</b> By repeatedly sorting the elements by their significant digits, from the least significant to the most significant, <b>Radix Sort </b>achieves the final sorted order.<br><br>
+                      <b>Radix Sort</b> has a <b>time complexity of O(d * (n + b))</b>, where d is the number of digits, n is the number of elements, and b is the base of the number system being used.
+                      <br><br><b>Radix sort </b>also has a <b>space complexity of O(n + b)</b>, where n is the number of elements and b is the base of the number system
+                    </p>
+        </div>
+        <h1 style="text-align: center;"><b>How does Radix Sort Algorithm work?</b></h1>
+        <div class="example">
+            <div id="step1">
+                <p>
+                  To perform <b>radix sort </b>on the array [170, 45, 75, 90, 802, 24, 2, 66], we follow these steps
+                </p>
+                <img id="image1" src="https://media.geeksforgeeks.org/wp-content/uploads/20230609164537/Radix-Sort.png">
+            </div>
+            <div id="step1">
+                <p>
+                    <b style="size: 20px;">. </b><b>Step 1:</b> Find the largest element in the array, which is 802. It has three digits, so we will iterate three times, once for each significant place.<br><br>
+                    <b style="size: 20px;">. </b><b>Step 2:</b> Sort the elements based on the unit place digits (X=0). We use a stable sorting technique, such as counting sort, to sort the digits at each significant place.<br><br>
+                    
+                    <b>Sorting based on the unit place:</b><br><br>
+                    
+                    <b style="size: 20px;">. </b>Perform counting sort on the array based on the unit place digits.<br><br>
+                    <b style="size: 20px;">. </b>The sorted array based on the unit place is [170, 90, 802, 2, 24, 45, 75, 66]..<br>
+                </p>
+                <img id="image2" src="https://media.geeksforgeeks.org/wp-content/uploads/20230609164536/Radix-Sort--1.png">
+            </div>
+            <div id="step1">
+                <p>
+                  <b>Step 3: </b>Sort the elements based on the tens place digits.<br><br>
+                  <b>Sorting based on the tens place:</b><br><br>
+                  
+                  <b style="size: 20px;">. </b>Perform counting sort on the array based on the tens place digits.<br><br>
+                  <b style="size: 20px;">. </b>The sorted array based on the tens place is [802, 2, 24, 45, 66, 170, 75, 90].
+                </p>
+                <img id="image3" src="https://media.geeksforgeeks.org/wp-content/uploads/20230609164535/Radix-Sort--2.png">
+            </div>
+            <div id="step1">
+                <p>
+                  <b>Step 4: </b>Sort the elements based on the hundreds place digits.<br><br>
+                  <b>Sorting based on the hundreds place:</b><br><br>
+                  
+                  <b style="size: 20px;">. </b>Perform counting sort on the array based on the hundreds place digits.<br><br>
+                  <b style="size: 20px;">. </b>The sorted array based on the hundreds place is [2, 24, 45, 66, 75, 90, 170, 802].<br>
+                </p>
+                <img src="https://media.geeksforgeeks.org/wp-content/uploads/20230609164535/Radix-Sort--3.png">
+            </div>
+            <div id="step1">
+                <p>
+                  <b>Step 5: </b>The array is now sorted in ascending order.<br><br>
+                  The final sorted array using radix sort is [2, 24, 45, 66, 75, 90, 170, 802].<br><br>
+                </p>
+                <img src="https://media.geeksforgeeks.org/wp-content/uploads/20230609164534/Radix-Sort--4.png">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

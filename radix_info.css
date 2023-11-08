@@ -1,0 +1,45 @@
+body{
+  background-image: url(https://wallpapercave.com/wp/wp6444170.jpg);
+  background-repeat: repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.main{
+  position: absolute;
+  justify-content: center; 
+  align-items: center; 
+}
+#info-container {
+  height: fit-content;
+  flex: 1;
+  background-color: whitesmoke;
+  padding: 50px;
+  width: 60%;
+  position: relative;
+  left :250px;
+}
+#step1{
+  margin-top: 20px;
+  border-style: groove;
+  height: fit-content;
+  background-color: #f0f0f0;
+  padding: 50px;
+  width: 60%;
+  position: relative;
+  left :250px;
+
+}
+
+p{
+  font-size: 25px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: 100;
+  font-style: bold;
+}
+
+img{
+  overflow: hidden;
+  height: 300px;
+  width: 600px;
+}
