@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <title>Count Sort</title>
+<head>
+    <link rel="stylesheet" type="text/css" href="count_sort.css">
+    <link rel="stylesheet" type="text/css" href="countsort_button.css">
+</head>
+<body>
+    <div class="container">
+        <span id="header">Count Sort</span>
+        <div class="unsorted1">
+            <p id="unsorted1">Semi-Sorted Elements</p>
+            <div class="bars1" id="bars1">
+            </div>
+        </div>
+        <div class="unsorted2">
+            <p id="unsorted2">Unsorted Elements</p>
+            <div class="bars2" id="bars2">
+            </div>
+        </div>
+        <div class="unsorted3">
+            <p id="unsorted3">Sorted Elements</p>
+            <div class="bars3" id="bars3"></div>
+        </div>
+        </div>
+        <button class="button-1" role="button" onclick="countSort1()">Click Here</button>
+        <button class="button-2" role="button" onclick="countSort3()">Click Here</button>
+        <button class="button-3" role="button" onclick="countSort2()">Click Here</button>
+        <button class="button-home" role="button"><a href="home.html" style="color: green; text-decoration: none;">Home</a></button>
+    </div>
+    <div class="information">
+        <div id="Semi-Sorted">
+            <p>Semi-Sorted List</p>
+            <pre id="S1"></pre>
+        </div>
+        <div id="Unsorted">
+            <p>Sorted List</p>
+            <pre id="S2"></pre>
+        </div>
+        <div id="Sorted">
+            <p>UnSorted List</p>
+            <pre id="S3"></pre>
+        </div>
+
+    </div>
+    <script src="count_sort.js"></script>
+</body>
+</html>
