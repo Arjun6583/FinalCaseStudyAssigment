@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bucket Sort Explanation </title>
+    <link rel="stylesheet" href="bucket_info.css" type="text/css">
+</head>
+<body>
+    <div class="main">
+        <h1 style="text-align: center; color: #080808;"><b>What is Bucket Sort?</b></h1>
+        <div id="info-container">
+                    <p style="color: rgb(4, 4, 4);">
+                    <b>Bucket Sort </b>is a is a sorting technique that involves <b>dividing elements into various groups, or buckets.</b> These buckets are formed by uniformly distributing the elements. Once the elements are divided into buckets, they can be sorted using <b>any other sorting algorithm.</b> Finally, the sorted elements are gathered together in an ordered fashion.<br><br>
+                    <b>Bucket Sort Algorithm:</b><br><br>
+                    <b style="size: 20px;">. </b>Create n empty buckets (Or lists) and do the following for every array element arr[i].<br><br>
+
+                    <b style="size: 20px;">. </b>Insert arr[i] into bucket[n*array[i]]<br><br>
+                    <b style="size: 20px;">. </b>Sort individual buckets using insertion sort.<br><br>
+                    <b style="size: 20px;">. </b>Concatenate all sorted buckets.<br><br>
+                    <b>Time Complexity: O(n*n) </b><br><br>
+                    <b>Auxiliary Space: O(n+k)</b>
+                    </p>
+        </div>
+        <h1 style="text-align: center;"><b>How does Bucket Sort Algorithm work?</b></h1>
+        <div class="example">
+            <div id="step1">
+                <p>
+                  To apply bucket sort on the input array <b>[0.78, 0.17, 0.39, 0.26, 0.72, 0.94, 0.21, 0.12, 0.23, 0.68]</b>, we follow these steps:<br><br>
+                  <b>Step 1: </b>Create an array of size 10, where each slot represents a bucket.
+                </p>
+                <img id="image1" src="https://media.geeksforgeeks.org/wp-content/uploads/20230705162208/file.png">
+            </div>
+            <div id="step1">
+                <p>
+                  <b>Step 2: </b>Insert elements into the buckets from the input array based on their range.<br><br>
+
+                  Inserting elements into the buckets:<br><br>
+                  
+                  <b style="size: 20px;">. </b>Take each element from the input array.<br><br>
+                  <b style="size: 20px;">. </b>Multiply the element by the size of the bucket array (10 in this case). For example, for element 0.23, we get 0.23 * 10 = 2.3.<br><br>
+                  <b style="size: 20px;">. </b>Convert the result to an integer, which gives us the bucket index. In this case, 2.3 is converted to the integer 2.
+                  Insert the element into the bucket corresponding to the calculated index.
+                  Repeat these steps for all elements in the input array.<br><br>
+                </p>
+                <img id="image2" src="https://media.geeksforgeeks.org/wp-content/uploads/20230705162234/file.png">
+            </div>
+            <div id="step1">
+                <p>
+                  <b>Step 3:</b> Sort the elements within each bucket. In this example, we use quicksort (or any stable sorting algorithm) to sort the elements within each bucket.<br><br>
+
+                  Sorting the elements within each bucket:<br><br>
+                  
+                  <b style="size: 20px;">. </b>Apply a stable sorting algorithm (e.g., quicksort) to sort the elements within each bucket.<br><br>
+                  <b style="size: 20px;">. </b>The elements within each bucket are now sorted.
+                </p>
+                <img id="image2" src="https://media.geeksforgeeks.org/wp-content/uploads/20230705162300/file.png">
+            </div>
+            <div id="step1">
+                <p>
+                  <b>Step 4:</b> Gather the elements from each bucket and put them back into the original array.<br><br>
+
+                  Gathering elements from each bucket:<br><br>
+                  
+                  <b style="size: 20px;">. </b>Iterate through each bucket in order.<br><br>
+                  <b style="size: 20px;">. </b>Insert each individual element from the bucket into the original array.<br><br>
+                  <b style="size: 20px;">. </b>Once an element is copied, it is removed from the bucket.<br><br>
+                  <b style="size: 20px;">. </b>Repeat this process for all buckets until all elements have been gathered.<br><br>
+                </p>
+                <img id="image2" src="https://media.geeksforgeeks.org/wp-content/uploads/20230705162320/file.png">
+            </div>
+            <div id="step1">
+                <p>
+                  <b>Step 5: </b>The original array now contains the sorted elements.<br><br>
+
+                  The final sorted array using bucket sort for the given input is [0.12, 0.17, 0.21, 0.23, 0.26, 0.39, 0.68, 0.72, 0.78, 0.94].<br><br>
+                </p>
+                <img id="image1" src="https://media.geeksforgeeks.org/wp-content/uploads/20230705162345/file.png"><br><br>
+                <a href="bucket_sort.html" style="color: blue; cursor: pointer; text-decoration: double;">See Simulation</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
