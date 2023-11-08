@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count Sort Explanation </title>
+    <link rel="stylesheet" href="info.css" type="text/css">
+</head>
+<body>
+    <div class="main">
+        <h1 style="text-align: center; color: #080808;"><b>What is Counting Sort?</b></h1>
+        <div id="info-container">
+                    <p style="color: rgb(4, 4, 4);">
+                    <b>Counting Sort </b>is a <b>non-comparison-based sorting algorithm</b> that works well when there is limited range of input values. It is particularly efficient when the range of input values is small compared to the number of elements to be sorted. The basic idea behind <b>Counting Sort </b>is to count the <b>frequency</b> of each distinct element in the input array and use that information to place the elements in their correct sorted positions.
+                    </p>
+        </div>
+        <h1 style="text-align: center;"><b>How does Counting Sort Algorithm work?</b></h1>
+        <div class="example">
+            <div id="step1">
+                <p>
+                    <b style="size: 20px;">. </b>Find out the <b>maximum </b>element from the given array<br>
+                </p>
+                <img src="https://media.geeksforgeeks.org/wp-content/uploads/20230920182425/1.png">
+            </div>
+            <div id="step1">
+                <p>
+                    <b style="size: 20px;">. </b>Initialize a <b>countArray[] </b>of length <b>max+1</b> with all elements as <b>0</b>. This array will be used for storing the occurrences of the elements of the input array.<br>
+                </p>
+                <img src="https://media.geeksforgeeks.org/wp-content/uploads/20230920182436/2.png">
+            </div>
+            <div id="step1">
+                <p>
+                    <b style="size: 20px;">. </b>In the <b>countArray[]</b>, store the count of each unique element of the input array at their respective indices.<br><br>
+                    <b style="size: 20px;">. For Example: </b>The count of element <b>2 </b>in the input array is <b>2</b>. So, store <b>2</b> at index <b>2 </b>in the <b>countArray[]</b>.<br><br> <b style="size: 20px;">. </b>Similarly, the count of element <b>5 </b>in the input array is <b>1</b>, hence store <b>1 </b>at index <b>5</b> in the <b>countArray[]</b>.<br>
+                </p>
+                <img src="https://media.geeksforgeeks.org/wp-content/uploads/20230922132754/3.png">
+            </div>
+            <div id="step1">
+                <p>
+                    <b style="size: 20px;">. </b>Store the <b>cumulative sum or prefix sum</b> of the elements of the <b>countArray[]</b> by doing <b>countArray[i] = countArray[i – 1] + countArray[i]</b>. This will help in placing the elements of the input array at the correct index in the output array.<br>
+                </p>
+                <img src="https://media.geeksforgeeks.org/wp-content/uploads/20230920182646/4.png">
+            </div>
+            <div id="step1">
+                <p>
+                    <b style="size: 20px;">. </b>SIterate from end of the input array and because traversing input array from end preserves the order of equal elements, which eventually makes this sorting algorithm stable.<br><br>
+                    <b style="size: 20px;">. </b>Update <b>outputArray[ countArray[ inputArray[i] ] – 1] = inputArray[i].</b> Also, update <b>countArray[ inputArray[i] ] = countArray[ inputArray[i] ]–.</b>
+                </p>
+                <img src="https://media.geeksforgeeks.org/wp-content/uploads/20230920182656/5.png">
+            </div>
+            <div id="step1">
+                <p>
+                    <b style="size: 20px;">. For i = 6</b>, Update <b>outputArray[ countArray[ inputArray[6] ] – 1] = inputArray[6].</b> Also, update <b>countArray[ inputArray[6] ] = countArray[ inputArray[6] ]–.</b>
+                </p>
+                <img src="https://media.geeksforgeeks.org/wp-content/uploads/20230920182724/6.png">
+            </div>
+            <div id="step1">
+                <p>
+                    <b style="size: 20px;">. For i = 5</b>, Update <b>outputArray[ countArray[ inputArray[5] ] – 1] = inputArray[5].</b> Also, update <b>countArray[ inputArray[5] ] = countArray[ inputArray[5] ]–.</b>
+                </p>
+                <img src="https://media.geeksforgeeks.org/wp-content/uploads/20230920182741/7.png">
+            </div>
+            <div id="step1">
+                <p>
+                    <b style="size: 20px;">. For i = 3</b>, Update <b>outputArray[ countArray[ inputArray[3] ] – 1] = inputArray[3].</b> Also, update <b>countArray[ inputArray[3] ] = countArray[ inputArray[3] ]–.</b>
+                </p>
+                <img src="https://media.geeksforgeeks.org/wp-content/uploads/20230920182752/8.png">
+            </div>
+            <div id="step1">
+                <p>
+                    <b style="size: 20px;">. For i = 3</b>, Update <b>outputArray[ countArray[ inputArray[3] ] – 1] = inputArray[3].</b> Also, update <b>countArray[ inputArray[3] ] = countArray[ inputArray[3] ]–.</b>
+                </p>
+                <img src="https://media.geeksforgeeks.org/wp-content/uploads/20230920182807/9.png">
+            </div>
+            <div id="step1">
+                <p>
+                    <b style="size: 20px;">. For i = 2</b>, Update <b>outputArray[ countArray[ inputArray[2] ] – 1] = inputArray[2].</b> Also, update <b>countArray[ inputArray[2] ] = countArray[ inputArray[2] ]–.</b>
+                </p>
+                <img src="https://media.geeksforgeeks.org/wp-content/uploads/20230920182827/10.png">
+            </div>
+            <div id="step1">
+                <p>
+                    <b style="size: 20px;">. For i = 1</b>, Update <b>outputArray[ countArray[ inputArray[1] ] – 1] = inputArray[1].</b> Also, update <b>countArray[ inputArray[1] ] = countArray[ inputArray[1] ]–.</b>
+                </p>
+                <img src="https://media.geeksforgeeks.org/wp-content/uploads/20230920182855/11.png">
+            </div>
+            <div id="step1">
+                <p>
+                    <b style="size: 20px;">. For i = 0</b>, Update <b>outputArray[ countArray[ inputArray[0] ] – 1] = inputArray[0].</b> Also, update <b>countArray[ inputArray[0] ] = countArray[ inputArray[0] ]–.</b>
+                </p>
+                <img src="https://media.geeksforgeeks.org/wp-content/uploads/20230920182910/12.png">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
