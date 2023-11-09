@@ -1,49 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <link rel="stylesheet" type="text/css" href="home.css">
-  <title>Home Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linear Sorting Algorithms</title>
+    <link href="home.css" type="text/css" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1>Case Study of Linear Sorting Algorithms</h1>
-  </header>
-  <div class="container">
-    <h2>Linear Sorting Algorithms</h2>
-    <p>Explore and learn about linear sorting algorithms.</p>
-    <button id="countingSortButton" onclick="toggleDropdown('countingSortDropdown')">Counting Sort</button>
-    <button id="radixSortButton" onclick="toggleDropdown('radixSortDropdown')">Radix Sort</button>
-    <button id="bucketSortButton" onclick="toggleDropdown('bucketSortDropdown')">Bucket Sort</button>
-    <!-- Add more buttons and descriptions for other sorting algorithms as needed -->
-    <div id="countingSortDropdown" class="dropdown">
-      <h3>Counting Sort</h3>
-      <p><b>Counting Sort </b>is another linear sorting algorithm that is highly efficient when sorting integers or elements with a limited range of values. It creates a frequency count of each distinct element in the input array, then uses this information to determine the final position of each element in the sorted result. Counting Sort is exceptionally fast when the range of values is relatively small compared to the size of the dataset. However, it is less suitable for datasets with a large range of values.<br><br>
-      <b>Time Complexity:</b> O(n + k), where n is the number of elements in the input array, and k is the range of input values. When k is relatively small compared to n, Counting Sort can achieve nearly linear time complexity.<br><br>
-      <b>Space Complexity: </b> O(k), where k is the range of input values. Counting Sort uses additional space to store the count of each element in the input array.<br><br>
-      <a href="count_sort.html" style="color: royalblue;">See Working</a>
-      </p>
-      <!-- Add more details about Counting Sort here -->
+    <header>
+        <h1>Linear Sorting Algorithms</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="count_info.html">Count Sort</a></li>
+            <li><a href="radix_info.html">Radix Sort</a></li>
+            <li><a href="bucket_info.html">Bucket Sort</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+      <section id="info">
+        <p>
+          <b>Linear sorting </b>algorithms are simple sorting algorithms that operate in a linear time complexity, typically O(n) in the best cases, where "n" is the number of elements to be sorted. These algorithms are often less efficient than more advanced sorting algorithms like quicksort, mergesort, or heapsort, but they are easy to understand and implement.<br><br>
+          <b>1: Count Sort <br><br>2: Radix Sort <br><br>3: Radix Sort<br><br>These are Linear sorting algorithms</b>
+        </p>
     </div>
-    <div id="radixSortDropdown" class="dropdown">
-      <h3>Radix Sort</h3>
-      <p><b>Radix Sort </b>is a non-comparative sorting algorithm that works by processing elements in the dataset one digit (or character) at a time, from the least significant digit to the most significant digit. It places elements into buckets based on each digit's value and then concatenates the buckets to produce the sorted result. Radix Sort is particularly effective for sorting integers, strings, or other data types where the elements can be broken down into individual digits or characters. It has a linear time complexity, often making it faster than many comparison-based sorting algorithms for specific scenarios.<br><br>
-      <b>Time Complexity:</b> O(k * n), where n is the number of elements in the input array, and k is the number of passes or the maximum number of digits or characters in the input values. When k is relatively small compared to n, Radix Sort can also achieve linear time complexity. Each pass involves a stable sorting operation (often counting sort) on the digits.<br><br>
-      <b>Space Complexity: </b>O(n + k), where n is the number of elements in the input array, and k is the range of input values. Radix Sort uses additional space for counting arrays during each pass.<br><br>
-      <a href="radix_sort.html" style="color: royalblue;">See Working</a>
-      </p>
-      <!-- Add more details about Radix Sort here -->
-    </div>
-    <div id="bucketSortDropdown" class="dropdown">
-      <h3>Bucket Sort</h3>
-      <p><b>Bucket Sort </b>is a linear sorting algorithm that is often used in conjunction with other sorting algorithms. It divides the input dataset into a set of buckets, each responsible for a particular range of values. Elements are distributed into buckets based on their values, and each bucket can be sorted using any sorting algorithm, including other linear ones like Counting Sort. Once each bucket is sorted, the contents of the buckets are concatenated to produce the final sorted array. Bucket Sort can achieve linear time complexity if the buckets are well-distributed and the sub-bucket sorting is efficient. It is particularly useful for datasets with non-uniform data distribution.<br><br>
-      <b>Time Complexity: </b>In the average case, Bucket Sort achieves O(n + n^2/k + k) time complexity, where n is the number of elements in the input array, k is the number of buckets, and n/k represents the average number of elements in each bucket. In the best-case scenario, when all elements are uniformly distributed, it can approach linear time complexity.<br><br>
-      <b>Space Complexity: </b>O(n + k), where n is the number of elements in the input array, and k is the number of buckets. Bucket Sort uses additional space to store the buckets and for the sub-bucket sorting.<br><br>
-      <a href="bucket_sort.html" style="color: royalblue;">See Working</a>
-      </p>
-      <!-- Add more details about Bucket Sort here -->
-    </div>
-  </div>
-  <script src="home.js">
-  </script>
+    <script>
+        // You can add JavaScript code here if needed
+    </script>
 </body>
 </html>

@@ -1,57 +1,77 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linear Sorting Algorithms</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
         }
-        .step-container {
-            display: flex;
-            align-items: center;
-            margin: 20px;
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
         }
-        .step-image {
-            flex: 1;
+        nav {
+            background-color: #444;
+            padding: 10px;
         }
-        .step-description {
-            flex: 1;
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+        nav li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
             padding: 20px;
-            text-align: left;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
 <body>
-    <h1>Counting Sort Step-by-Step</h1>
-
-    <div class="step-container">
-        <div class="step-image">
-            <img src="step1_image.png" alt="Step 1">
-        </div>
-        <div class="step-description">
-            <h2>Step 1: Count the Occurrences</h2>
-            <p>Count the occurrences of each element in the input array.</p>
-        </div>
+    <header>
+        <h1>Linear Sorting Algorithms</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#bubble-sort">Bubble Sort</a></li>
+            <li><a href="#selection-sort">Selection Sort</a></li>
+            <li><a href="#insertion-sort">Insertion Sort</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <section id="bubble-sort">
+            <h2>Bubble Sort</h2>
+            <p>Bubble Sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order. The pass through the list is repeated until the list is sorted.</p>
+        </section>
+        <section id="selection-sort">
+            <h2>Selection Sort</h2>
+            <p>Selection Sort is a simple comparison-based sorting algorithm. It works by dividing the input list into two parts: the sublist of items already sorted and the sublist of items remaining to be sorted.</p>
+        </section>
+        <section id="insertion-sort">
+            <h2>Insertion Sort</h2>
+            <p>Insertion Sort is a simple sorting algorithm that builds the final sorted array one item at a time. It is much less efficient on large lists than more advanced algorithms such as quicksort, heapsort, or merge sort.</p>
+        </section>
     </div>
-
-    <div class="step-container">
-        <div class="step-image">
-            <img src="step2_image.png" alt="Step 2">
-        </div>
-        <div class="step-description">
-            <h2>Step 2: Calculate Cumulative Counts</h2>
-            <p>Calculate the cumulative count of elements to determine their final positions.</p>
-        </div>
-    </div>
-
-    <div class="step-container">
-        <div class="step-image">
-            <img src="step3_image.png" alt="Step 3">
-        </div>
-        <div class="step-description">
-            <h2>Step 3: Place Elements in Sorted Order</h2>
-            <p>Place each element in its correct sorted position based on the cumulative count.</p>
-        </div>
-    </div>
-
+    <script>
+        // You can add JavaScript code here if needed
+    </script>
 </body>
 </html>
