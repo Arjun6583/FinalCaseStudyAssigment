@@ -1,199 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bucket Sort Simulation</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      text-align: center;
-      background-color: #3498db;
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-    h1 {
-      color: #ecf0f1;
-    }
-    .array-container {
-      display: flex;
-      align-items: center;
-      margin-top: 20px;
-    }
-    .array-box {
-      background-color: #2c3e50;
-      padding: 20px;
-      margin: 10px;
-      color: #ecf0f1;
-      border-radius: 5px;
-      border: 2px solid #2980b9;
-      transition: transform 0.3s ease-in-out;
-    }
-    .array-heading {
-      color: #ecf0f1;
-      margin-right: 10px;
-    }
-    .cursor {
-      font-size: 24px;
-      color: #e74c3c;
-      transition: bottom 0.3s ease-in-out;
-    }
-    button {
-      font-size: 18px;
-      padding: 10px 20px;
-      margin-top: 20px;
-      background-color: #2ecc71;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease-in-out;
-    }
-    button:hover {
-      background-color: #27ae60;
-    }
-    .highlight {
-      background-color: #e74c3c;
-      color: #fff;
-    }
-    .bucket-container {
-      display: flex;
-      align-items: center;
-      margin-top: 20px;
-    }
-    .bucket {
-      background-color: #e74c3c;
-      padding: 20px;
-      margin: 10px;
-      color: #ecf0f1;
-      border-radius: 5px;
-      border: 2px solid #c0392b;
-      transition: transform 0.3s ease-in-out;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Algorithms - Details</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        h1, h2 {
+            color: #4285f4;
+            text-align: center;
+        }
+
+        p {
+            line-height: 1.8;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .algorithm-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            font-size: 18px;
+        }
+
+        .algorithm-section:hover {
+            transform: scale(1.05);
+        }
+
+        .time-space-info {
+            margin-top: 15px;
+            color: #777;
+        }
+
+    </style>
 </head>
+
 <body>
 
-<h1>Bucket Sort Simulation</h1>
+    <div class="container">
 
-<div class="array-container" id="input-container">
-  <div class="array-heading">Input Array</div>
-</div>
-<div class="array-container" id="array-container">
-  <div class="array-heading">Main Array</div>
-</div>
-<div class="bucket-container" id="bucket-container-0">
-  <div class="array-heading">Bucket 0</div>
-</div>
-<div class="bucket-container" id="bucket-container-1">
-  <div class="array-heading">Bucket 1</div>
-</div>
-<div class="bucket-container" id="bucket-container-2">
-  <div class="array-heading">Bucket 2</div>
-</div>
+        <h1>Linear Sorting Algorithms</h1>
 
-<button onclick="startSort()">Start Sorting</button>
+        <div class="algorithm-section" id="countSortInfo">
+            <h2>Count Sort</h2>
+            <p>
+                Count Sort is a non-comparison based sorting algorithm. It is particularly efficient for small
+                range inputs. The algorithm counts the occurrences of each element, creating a frequency array,
+                and then reconstructs the sorted array.
+            </p>
+            <ul>
+                <li><strong>Time Complexity:</strong> O(n + k)</li>
+                <li><strong>Space Complexity:</strong> O(k)</li>
+            </ul>
+        </div>
 
-<script>
-  async function delay(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
+        <div class="algorithm-section" id="radixSortInfo">
+            <h2>Radix Sort</h2>
+            <p>
+                Radix Sort is a non-comparison based sorting algorithm that processes individual digits. It can
+                be implemented using the LSD (Least Significant Digit) or MSD (Most Significant Digit) approach.
+                Radix Sort's time complexity is O(d * (n + k)), where d is the number of digits, n is the number
+                of elements, and k is the base of the numbering system.
+            </p>
+            <ul>
+                <li><strong>Time Complexity:</strong> O(d * (n + k))</li>
+                <li><strong>Space Complexity:</strong> Depends on the implementation</li>
+            </ul>
+        </div>
 
-  async function bucketSort(arr) {
-    const max = Math.max(...arr);
-    const bucketSize = 3; // Number of buckets
-    const buckets = Array.from({ length: bucketSize }, () => []);
+        <div class="algorithm-section" id="bucketSortInfo">
+            <h2>Bucket Sort</h2>
+            <p>
+                Bucket Sort is a distribution sort that divides the elements into buckets and then sorts each
+                bucket, often using another sorting algorithm. It performs well when the input is uniformly
+                distributed. Worst-case time complexity: O(n^2), but it's usually more efficient. Space
+                complexity: O(n + k), where n is the number of elements, and k is the number of buckets.
+            </p>
+            <ul>
+                <li><strong>Time Complexity:</strong> Depends on the sorting algorithm used for individual buckets</li>
+                <li><strong>Space Complexity:</strong> O(n + k)</li>
+            </ul>
+        </div>
 
-    // Display input array
-    updateFullArray1(arr);
-    await delay(1000);
-
-    // Distribute elements into buckets
-    for (let i = 0; i < arr.length; i++) {
-      updateArray(arr,i);
-      await delay(1000);
-      const bucketIndex = Math.floor((arr[i] / (max + 1)) * bucketSize);
-      buckets[bucketIndex].push(arr[i]);
-      updateBucket(buckets[bucketIndex],bucketIndex);
-      await delay(1000);
-    }
-    updateFullArray1(arr);
-
-    // Sort individual buckets
-    for (let i = 0; i < buckets.length; i++) {
-      buckets[i].sort((a, b) => a - b);
-      updateBucket(buckets[i], i);
-      await delay(1000);
-    }
-
-
-    // Concatenate sorted buckets to get the final sorted array
-    const sortedArray = [].concat(...buckets);
-    
-    // Display sorted array
-    updateFullArray2(sortedArray);
-    await delay(1000);
-  }
-
-  function updateBucket(bucket, bucketIndex) {
-    const bucketContainer = document.getElementById(`bucket-container-${bucketIndex}`);
-    bucketContainer.innerHTML = `<div class="array-heading">Bucket ${bucketIndex}</div>`;
-    bucket.forEach((value, index) => {
-      const bucketBox = document.createElement('div');
-      bucketBox.className = 'array-box';
-      bucketBox.textContent = value;
-      bucketBox.style.transform = 'scale(1)';
-      bucketContainer.appendChild(bucketBox);
-    });
-  }
-
-  function updateArray(arr, cursorIndex) {
-    const arrayContainer = document.getElementById('input-container');
-    arrayContainer.innerHTML = `<div class="array-heading">Input Array</div>`;
-    arr.forEach((value, index) => {
-      const arrayBox = document.createElement('div');
-      arrayBox.className = 'array-box';
-      arrayBox.textContent = value;
-      arrayBox.style.transform = index === cursorIndex ? 'scale(1.1)' : 'scale(1)';
-      if(index===cursorIndex)
-        arrayBox.classList.add('highlight');
-      arrayContainer.appendChild(arrayBox);
-    });
-  }
-
-  function updateFullArray1(arr) {
-    const arrayContainer = document.getElementById('input-container');
-    arrayContainer.innerHTML = `<div class="array-heading">Input Array</div>`;
-    arr.forEach((value, index) => {
-      const arrayBox = document.createElement('div');
-      arrayBox.className = 'array-box';
-      arrayBox.textContent = value;
-      arrayBox.style.transform = 'scale(1)';
-      arrayContainer.appendChild(arrayBox);
-    });
-  }
-
-  function updateFullArray2(arr) {
-    const arrayContainer = document.getElementById('array-container');
-    arrayContainer.innerHTML = `<div class="array-heading">Sorted Array</div>`;
-    arr.forEach((value, index) => {
-      const arrayBox = document.createElement('div');
-      arrayBox.className = 'array-box';
-      arrayBox.textContent = value;
-      arrayBox.style.transform = 'scale(1)';
-      arrayContainer.appendChild(arrayBox);
-    });
-  }
-
-  async function startSort() {
-    const array = [29, 25, 3, 49, 9, 37, 21, 43, 12, 16,11,2,26];
-    await bucketSort(array);
-  }
-</script>
+    </div>
 
 </body>
-</
+
+</html>

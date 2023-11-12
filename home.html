@@ -1,31 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Linear Sorting Algorithms</title>
     <link href="home.css" type="text/css" rel="stylesheet">
+    <style>
+    </style>
 </head>
+
 <body>
-    <header>
-        <h1>Linear Sorting Algorithms</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="count_info.html">Count Sort</a></li>
-            <li><a href="radix_info.html">Radix Sort</a></li>
-            <li><a href="bucket_info.html">Bucket Sort</a></li>
-        </ul>
-    </nav>
+
     <div class="container">
-      <section id="info">
-        <p>
-          <b>Linear sorting </b>algorithms are simple sorting algorithms that operate in a linear time complexity, typically O(n) in the best cases, where "n" is the number of elements to be sorted. These algorithms are often less efficient than more advanced sorting algorithms like quicksort, mergesort, or heapsort, but they are easy to understand and implement.<br><br>
-          <b>1: Count Sort <br><br>2: Radix Sort <br><br>3: Radix Sort<br><br>These are Linear sorting algorithms</b>
-        </p>
+
+        <h1>Linear Sorting Algorithms</h1>
+
+        <div class="algorithm-section" id="countSortInfo">
+            <h2>Count Sort</h2>
+            <p>
+                Count Sort is a non-comparison based sorting algorithm. It is particularly efficient for small
+                range inputs. The algorithm counts the occurrences of each element, creating a frequency array,
+                and then reconstructs the sorted array.
+            </p>
+            <ul>
+                <li><strong>Time Complexity:</strong> O(n + k)</li>
+                <li><strong>Space Complexity:</strong> O(k)</li>
+            </ul>
+            <button class="button-home" role="button"><a href="count_sort_sim.html" style="color: green; text-decoration: none;">See Visualization</a></button><br><br>
+            <button class="button-home" role="button"><a href="count_info.html" style="color: green; text-decoration: none;">Explanation</a></button>
+        </div>
+
+        <div class="algorithm-section" id="radixSortInfo">
+            <h2>Radix Sort</h2>
+            <p>
+                Radix Sort is a non-comparison based sorting algorithm that processes individual digits. It can
+                be implemented using the LSD (Least Significant Digit) or MSD (Most Significant Digit) approach.
+                Radix Sort's time complexity is O(d * (n + k)), where d is the number of digits, n is the number
+                of elements, and k is the base of the numbering system.
+            </p>
+            <ul>
+                <li><strong>Time Complexity:</strong> O(d * (n + k))</li>
+                <li><strong>Space Complexity:</strong> Depends on the implementation</li>
+            </ul>
+            <button class="button-home" role="button"><a href="radix_sort_sim.html" style="color: green; text-decoration: none;">See Visualization</a></button><br><br>
+            <button class="button-home" role="button"><a href="radix_info.html" style="color: green; text-decoration: none;">Explanation</a></button>
+        </div>
+
+        <div class="algorithm-section" id="bucketSortInfo">
+            <h2>Bucket Sort</h2>
+            <p>
+                Bucket Sort is a distribution sort that divides the elements into buckets and then sorts each
+                bucket, often using another sorting algorithm. It performs well when the input is uniformly
+                distributed. Worst-case time complexity: O(n^2), but it's usually more efficient. Space
+                complexity: O(n + k), where n is the number of elements, and k is the number of buckets.
+            </p>
+            <ul>
+                <li><strong>Time Complexity:</strong> Depends on the sorting algorithm used for individual buckets</li>
+                <li><strong>Space Complexity:</strong> O(n + k)</li>
+            </ul>
+            <button class="button-home" role="button"><a href="bucket_sort_sim.html" style="color: green; text-decoration: none;">See Visualization</a></button><br><br>
+            <button class="button-home" role="button"><a href="bucket_info.html" style="color: green; text-decoration: none;">Explanation</a></button>
+        </div>
+
     </div>
-    <script>
-        // You can add JavaScript code here if needed
-    </script>
+
 </body>
+
 </html>
