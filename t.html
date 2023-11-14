@@ -1,110 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sorting Algorithms - Details</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
-            color: #333;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bucket Sort Simulation</title>
+  <link rel="stylesheet" type="text/css" href="bucket_sort_sim.css">
+  <link rel="stylesheet" type="text/css" href="button.css">
+  <style>
+    body {
+  background-image: url(https://wallpapercave.com/wp/wp6444170.jpg);
+  background-repeat: repeat;
+  background-size: cover;
+  background-position: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+h1 {
+  color: blue;
+  animation: shining 3s infinite ease-in-out;
 
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            overflow: hidden;
-        }
+}
+.array-container {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+.array-box {
+  background-color: #2c3e50;
+  padding: 20px;
+  margin: 10px;
+  color: #ecf0f1;
+  border-radius: 5px;
+  border: 2px solid #2980b9;
+  transition: transform 0.3s ease-in-out;
+}
+.array-heading {
+  color: black;
+  margin-right: 10px;
+}
+.cursor {
+  font-size: 24px;
+  color: #e74c3c;
+  transition: bottom 0.3s ease-in-out;
+}
+.highlight {
+  background-color: #e74c3c;
+  color: #fff;
+}
+.bucket-container {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+.bucket {
+  background-color: #e74c3c;
+  padding: 20px;
+  margin: 10px;
+  color: #ecf0f1;
+  border-radius: 5px;
+  border: 2px solid #c0392b;
+  transition: transform 0.3s ease-in-out;
+}
 
-        h1, h2 {
-            color: #4285f4;
-            text-align: center;
-        }
+@keyframes shining{
+  0%{
+      color: #4285f4;
+      text-shadow: 0 0 10px #4285f4;
+  }
+  50%{
+      color: rgb(255, 165, 0);
+      text-shadow: 0 0 10px rgb(255, 165, 0);
+  }
+  100%{
+      color: #4285f4;
+      text-shadow: 0 0 10px #4285f4;
+  }
+}
 
-        p {
-            line-height: 1.8;
-            font-size: 16px;
-            margin-bottom: 10px;
-        }
-
-        .algorithm-section {
-            margin-bottom: 30px;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease-in-out;
-            font-size: 18px;
-        }
-
-        .algorithm-section:hover {
-            transform: scale(1.05);
-        }
-
-        .time-space-info {
-            margin-top: 15px;
-            color: #777;
-        }
-
-    </style>
+  </style>
 </head>
+<body onload="display()">
 
-<body>
+<h1>Bucket Sort Simulation</h1>
 
-    <div class="container">
+<div class="array-container" id="input-container">
+  <div class="array-heading">Input Array</div>
+</div>
+<div class="array-container" id="array-container">
+  <div class="array-heading">Sorted Array</div>
+</div>
+<div class="bucket-container" id="bucket-container-0">
+  <div class="array-heading">Bucket 0</div>
+</div>
 
-        <h1>Linear Sorting Algorithms</h1>
+<div class="bucket-container" id="bucket-container-1">
+  <div class="array-heading">Bucket 1</div>
+</div>
+<div class="bucket-container" id="bucket-container-2">
+  <div class="array-heading">Bucket 2</div>
+</div>
+<br><br>
+<div id="butt">
+  <button class="button-1" onclick="startSort()">Start Sorting</button>
+  
+</div>
 
-        <div class="algorithm-section" id="countSortInfo">
-            <h2>Count Sort</h2>
-            <p>
-                Count Sort is a non-comparison based sorting algorithm. It is particularly efficient for small
-                range inputs. The algorithm counts the occurrences of each element, creating a frequency array,
-                and then reconstructs the sorted array.
-            </p>
-            <ul>
-                <li><strong>Time Complexity:</strong> O(n + k)</li>
-                <li><strong>Space Complexity:</strong> O(k)</li>
-            </ul>
-        </div>
 
-        <div class="algorithm-section" id="radixSortInfo">
-            <h2>Radix Sort</h2>
-            <p>
-                Radix Sort is a non-comparison based sorting algorithm that processes individual digits. It can
-                be implemented using the LSD (Least Significant Digit) or MSD (Most Significant Digit) approach.
-                Radix Sort's time complexity is O(d * (n + k)), where d is the number of digits, n is the number
-                of elements, and k is the base of the numbering system.
-            </p>
-            <ul>
-                <li><strong>Time Complexity:</strong> O(d * (n + k))</li>
-                <li><strong>Space Complexity:</strong> Depends on the implementation</li>
-            </ul>
-        </div>
-
-        <div class="algorithm-section" id="bucketSortInfo">
-            <h2>Bucket Sort</h2>
-            <p>
-                Bucket Sort is a distribution sort that divides the elements into buckets and then sorts each
-                bucket, often using another sorting algorithm. It performs well when the input is uniformly
-                distributed. Worst-case time complexity: O(n^2), but it's usually more efficient. Space
-                complexity: O(n + k), where n is the number of elements, and k is the number of buckets.
-            </p>
-            <ul>
-                <li><strong>Time Complexity:</strong> Depends on the sorting algorithm used for individual buckets</li>
-                <li><strong>Space Complexity:</strong> O(n + k)</li>
-            </ul>
-        </div>
-
-    </div>
+<script src="bucket_sort_sim.js">
+  
+</script>
 
 </body>
-
-</html>
+</

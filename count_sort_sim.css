@@ -13,7 +13,23 @@ body {
   justify-content: center;
 }
 h1 {
-  color: black;
+  color: blue;
+  animation: shining 3s infinite ease-in-out;
+}
+
+@keyframes shining{
+  0%{
+      color: #4285f4;
+      text-shadow: 0 0 10px #4285f4;
+  }
+  50%{
+      color: rgb(255, 165, 0);
+      text-shadow: 0 0 10px rgb(255, 165, 0);
+  }
+  100%{
+      color: #4285f4;
+      text-shadow: 0 0 10px #4285f4;
+  }
 }
 .array-container {
   display: flex;

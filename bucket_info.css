@@ -16,8 +16,34 @@ body{
   background-color: whitesmoke;
   padding: 50px;
   width: 60%;
+  transition: transform 0.3s ease-in-out;
   position: relative;
   left :250px;
+  border-style: groove;
+  animation: shining 3s infinite ease-in-out;
+}
+
+#info-container:hover {
+  transform: scale(1.05);
+}
+
+#step1:hover {
+  transform: scale(1.05);
+}
+
+@keyframes shining{
+  0%{
+      border-color: #4285f4;
+      box-shadow: 0 0 10px #4285f4;
+  }
+  50%{
+      border-color: rgb(255, 165, 0);
+      box-shadow: 0 0 10px rgb(255, 165, 0);
+  }
+  100%{
+      border-color: #4285f4;
+      box-shadow: 0 0 10px #4285f4;
+  }
 }
 #step1{
   margin-top: 20px;
@@ -28,6 +54,9 @@ body{
   width: 60%;
   position: relative;
   left :250px;
+  border-style: groove;
+  animation: shining 3s infinite ease-in-out;
+  transition: transform 0.3s ease-in-out;
 
 }
 
@@ -52,4 +81,24 @@ p{
 .button-home:hover {
   box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
   transform: scale(1.05) rotate(-1deg);
+}
+
+h1 {
+  color: blue;
+  animation: shining2 3s infinite ease-in-out;
+}
+
+@keyframes shining2{
+  0%{
+      color: #4285f4;
+      text-shadow: 0 0 10px #4285f4;
+  }
+  50%{
+      color: rgb(21, 0, 255);
+      text-shadow: 0 0 10px rgb(72, 0, 255);
+  }
+  100%{
+      color: #4285f4;
+      text-shadow: 0 0 10px #4285f4;
+  }
 }

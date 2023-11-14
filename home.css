@@ -18,6 +18,9 @@ body {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   padding: 20px;
   overflow: hidden;
+  border-color: #4285f4;
+  border-style: groove;
+  animation:  shining 2s infinite;
 }
 
 h1, h2 {
@@ -39,6 +42,9 @@ p {
   transition: transform 0.3s ease-in-out;
   font-size: 18px;
   height: fit-content;
+  border-color: #4285f4;
+  border-style: groove;
+  animation:  shining 2s infinite;
 }
 
 .algorithm-section:hover {
@@ -50,6 +56,20 @@ p {
   color: #777;
 }
 
+@keyframes shining{
+  0%{
+      border-color: #4285f4;
+      box-shadow: 0 0 10px #4285f4;
+  }
+  50%{
+      border-color: rgb(255, 165, 0);
+      box-shadow: 0 0 10px rgb(255, 165, 0);
+  }
+  100%{
+      border-color: #4285f4;
+      box-shadow: 0 0 10px #4285f4;
+  }
+}
 
 .button-home:hover {
   box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
