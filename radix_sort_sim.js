@@ -14,46 +14,69 @@ async function radixSort(arr) {
   const max = Math.max(...arr);
   let cnt=1;
   for (let exp = 1; Math.floor(max / exp) > 0; exp *= 10) {
-    document.getElementById("information").innerHTML='Sort By '+data[cnt++];
-    await countingSort(arr, exp);
+    document.getElementById("information").innerHTML="<h2>Sort By "+data[cnt]+" </h2>";
+    await countingSort(arr, exp,data[cnt]);
+    cnt+=1;
   }
+  document.getElementById('butt').innerHTML="<button class='button-home' role='button'><a href='radix_info.html' style='color: green; text-decoration: none;'>Go To Explanation</a></button>";
 }
 
-async function countingSort(arr, exp) {
+async function countingSort(arr, exp,msg) {
   const n = arr.length;
   const output = Array(n).fill(0);
   const count = Array(10).fill(0);
-
+  document.getElementById("information").innerHTML="<h2> Count the Frequency of every digit on "+msg +" and store into Count Array</h2>";
+  await delay(3000);
   for (let i = 0; i < n; i++) {
+    let t=Math.floor(arr[i] / exp) % 10;
+    updateArray(arr,i, false);
+    document.getElementById("information").innerHTML="<h2>Increment the frequency of "+arr[i] +" "+ msg +" place digit and store in count array at "+ t+" index </h2>";
+    updateCountArray(count, t);
     count[Math.floor(arr[i] / exp) % 10]++;
+    await delay(3000);
+    
   }
+
+  await delay(3000);
+  document.getElementById("information").innerHTML="<h2> Update the Count array with there sum of all prefix</h2>";
+  await delay(3000);
 
   for (let i = 1; i < 10; i++) {
+    let sum=count[i]+count[i-1]
+    document.getElementById("information").innerHTML="<h2>Sum of "+count[i]+" + "+ count[i-1]+ " is "+ sum+" and store the sum into count array at "+i+" index</h2>";
     count[i] += count[i - 1];
+    updateCountArray(count, i);
+    await delay(3000);
   }
 
+  await delay(3000);
+  document.getElementById("information").innerHTML="<h2>Iterate from end of the input array and because traversing input array from end preserves the order of equal elements, which eventually makes this sorting algorithm stable</h2>";
+  await delay(3000);
+
   for (let i = n - 1; i >= 0; i--) {
+    let t=count[Math.floor(arr[i] / exp) % 10] - 1;
     updateArray(arr, i, false);
-    await delay(1000);
+    await delay(3000);
     output[count[Math.floor(arr[i] / exp) % 10] - 1] = arr[i];
+    document.getElementById("information").innerHTML="<h2> Store the "+ arr[i]+ " element into Output array in "+t+" index </h2>";
     updateArray(output, count[Math.floor(arr[i] / exp) % 10] - 1, true);
-    await delay(1000);
+    await delay(3000);
     updateCountArray(count, Math.floor(arr[i] / exp) % 10);
-    await delay(1000);
+    document.getElementById("information").innerHTML="<h2>Update the Count array decrement value of "+Math.floor(arr[i] / exp) % 10+" index value "+count[Math.floor(arr[i] / exp) % 10]+ " by 1 </h2>";
+    await delay(3000);
     count[Math.floor(arr[i] / exp) % 10]--;
     updateCountArray(count, Math.floor(arr[i] / exp) % 10);
-    await delay(1000);
+    await delay(3000);
   }
 
   for (let i = 0; i < n; i++) {
     arr[i] = output[i];
   }
-
+  document.getElementById("information").innerHTML="<h2>You get Final output sorted array into output array....<h2>";
   updateFullArray1(count);
   updateFullArray2(output);
   updateFullArray3(arr);
 
-  document.getElementById('butt').innerHTML="<button class='button-1' onclick='startSort()'>Sort Again</button><button class='button-home' role='button'><a href='radix_info.html' style='color: green; text-decoration: none;'>Go Back</a></button>";
 }
 
 function updateArray(arr, cursorIndex, isOutput) {

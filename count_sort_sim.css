@@ -12,6 +12,12 @@ body {
   align-items: center;
   justify-content: center;
 }
+#info{
+  width: 300px;
+  position: absolute;
+  left: 70px;
+  height: 100px;
+}
 h1 {
   color: blue;
   animation: shining 3s infinite ease-in-out;
@@ -57,4 +63,10 @@ h1 {
 .highlight {
   background-color: #e74c3c;
   color: #fff;
+}
+p{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  font-weight: 30px;
+  color: blue;
 }

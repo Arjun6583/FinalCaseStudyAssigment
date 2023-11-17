@@ -7,33 +7,63 @@ async function countSort(arr) {
   const max = Math.max(...arr);
   const count = Array(max + 1).fill(0);
   const output = Array(arr.length).fill(0);
-
+  document.getElementById("information").innerHTML="<h2>Step 1: Find out the max from given array Initialize a countArray[] of length max+1 with all elements as This array will be used for storing the occurrences of the elements of the input array</h2>";
+  await delay(3000);
   // Count occurrences
-  arr.forEach(num => count[num]++);
+  //arr.forEach(num => count[num]++);
+  document.getElementById("information").innerHTML="<h2>Step 2: Count the Frequency of every number and store into Count Array</h2>";
+  await delay(3000);
+  for(let i=0;i<arr.length;++i)
+  {
+    updateArray(arr,i, false);
+    document.getElementById("information").innerHTML="<h2>Increment the frequency of "+ arr[i] +" element store in count array at "+ arr[i]+" index </h2>";
+    updateCountArray(count, arr[i]);
+    count[arr[i]]+=1;
+    await delay(3000);
+  }
+
+  await delay(3000);
+  document.getElementById("information").innerHTML="<h2>Step 3: Update the Count array with there sum of all prefix</h2>";
+  await delay(3000);
 
   // Calculate prefix sum
   for (let i = 1; i <= max; i++) {
+    let sum=count[i]+count[i-1]
+    document.getElementById("information").innerHTML="<h2>Sum of "+count[i]+" + "+ count[i-1]+ " is "+ sum+" and store the sum into count array at "+i+" index</h2>";
     count[i] += count[i - 1];
+    updateCountArray(count, i);
+    await delay(3000);
   }
+  await delay(3000);
+  document.getElementById("information").innerHTML="<h2>Step 4: Iterate from end of the input array and because traversing input array from end preserves the order of equal elements, which eventually makes this sorting algorithm stable</h2>";
+  await delay(3000);
+
+
 
   // Build the output array
   for (let i = arr.length - 1; i >= 0; i--) {
     updateArray(arr,i, false);
+    await delay(3000);
     output[count[arr[i]] - 1] = arr[i];
+    let t=count[arr[i]]-1;
+    document.getElementById("information").innerHTML="<h2> Store the "+ arr[i]+ " element into Output array in"+t+" index </h2>";
     updateArray(output, count[arr[i]] - 1, true);
-    await delay(1000);
+    await delay(3000);
     updateCountArray(count, arr[i]);
-    await delay(1000);
+    document.getElementById("information").innerHTML="<h2>Update the Count array decrement value of "+arr[i]+" index value "+count[arr[i]]+ " by 1 </h2>";
+    await delay(3000);
     count[arr[i]]--;
     updateCountArray(count, arr[i]);
-    await delay(1000);
+    await delay(3000);
   }
 
+  
+  document.getElementById("information").innerHTML="<h2>You get Final output sorted array into output array....<h2>";
   updateFullArray1(count);
   updateFullArray2(output);
   updateFullArray3(arr);
 
-  document.getElementById('butt').innerHTML="<button class='button-1' onclick='startSort()'>Start Sorting</button><button class='button-home' role='button'><a href='count_info.html' style='color: green; text-decoration: none;'>Go Back</a></button>";
+  document.getElementById('butt').innerHTML="<button class='button-home' role='button'><a href='count_info.html' style='color: green; text-decoration: none;'>Go To Explanation</a></button>";
 
 
 }

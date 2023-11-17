@@ -60,7 +60,7 @@ h1 {
 }
 #info{
     position: absolute;
-    right: 70px;
+    left: 70px;
     height: 100px;
     width: 250px;
 }
@@ -68,5 +68,5 @@ p{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
     font-weight: 20px;
-    color: black;
+    color: blue;
 }
