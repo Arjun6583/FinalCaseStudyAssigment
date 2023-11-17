@@ -18,6 +18,9 @@ async function radixSort(arr) {
     await countingSort(arr, exp,data[cnt]);
     cnt+=1;
   }
+
+  document.getElementById("information").innerHTML="<h2>You get Final output sorted array into output array....<h2>";
+
   document.getElementById('butt').innerHTML="<button class='button-home' role='button'><a href='radix_info.html' style='color: green; text-decoration: none;'>Go To Explanation</a></button>";
 }
 

@@ -49,6 +49,8 @@ async function bucketSort(arr) {
   updateFullArray2(sortedArray);
   await delay(3000);
 
+  document.getElementById("information").innerHTML="<h2>You get Final output sorted array into output array....<h2>";
+
   document.getElementById('butt').innerHTML="<button class='button-home' role='button'><a href='bucket_info.html' style='color: green; text-decoration: none;'>Go to Explanation</a></button>";
 
 }
